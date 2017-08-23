@@ -34,18 +34,16 @@ $( function() {
 			}
 		} );
 	} );
-} );
 
 
 
-$( function() {
 
 	describe( 'The menu', function() {
 		/* this test ensures the menu element is
 		 * hidden by default.
 		 */
 		it( 'Menu is hidden on load', function() {
-			expect( $( 'body' ).attr( "class" ).split( ' ' )[ 0 ] ).toBe( "menu-hidden" );
+			expect( document.body.classList ).toContain( 'menu-hidden' );
 		} );
 
 
@@ -64,10 +62,9 @@ $( function() {
 			expect( document.body.classList ).toContain( 'menu-hidden' );
 		} );
 	} );
-} );
 
 
-$( function() {
+
 	describe( 'Initial Entries', function() {
 
 		/* this is a test that ensures when the loadFeed
@@ -79,12 +76,12 @@ $( function() {
 			loadFeed( 0, done );
 		} );
 		it( 'At least one entry is in the feed list on load.', function() {
-			expect( $( '.feed' ).length ).not.toBe( 0 );
+			expect( $( '.feed .entry' ).length ).not.toBe( 0 );
 		} );
 	} );
 } );
 /* TODO: Write a new test suite named "New Feed Selection" */
-$( function() {
+
 describe( 'New Feed Selection', function() {
 	/* this test ensures when a new feed is loaded
 	 * by the loadFeed function that the content actually changes.
@@ -103,6 +100,4 @@ describe( 'New Feed Selection', function() {
 	it( 'Content updates on feed load.', function() {
 		expect( afterLoad ).not.toBe( beforeLoad );
 	} );
-} );
-
 } );
