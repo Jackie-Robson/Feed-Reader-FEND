@@ -33,7 +33,7 @@ $( function() {
 				expect( allFeeds[ i ].name.length ).not.toBe( 0 );
 			}
 		} );
-	} )
+	} );
 } );
 
 
